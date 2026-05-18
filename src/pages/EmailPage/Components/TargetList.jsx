@@ -4,7 +4,7 @@ import Options from "./Options";
 import RemoveEmail from "./options/RemoveEmail";
 
 function TargetList() {
-  const { data, loading, refetch } = useFetch("http://80.97.124.100:3000/api/targets");
+  const { data, loading, refetch } = useFetch("/api/targets");
   
 // Update your columns in TargetList.js
 const columns = ["name", "email", "remove"];
