@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
 
 const SMTPSettings = () => {
-  const { data: smtps, loading, refetch } = useFetch('http://localhost:3000/api/smtp');
+  const { data: smtps, loading, refetch } = useFetch('/api/smtp');
   const [host, setHost] = useState('');
   const [port, setPort] = useState('');
   const [user, setUser] = useState('');
@@ -14,7 +14,7 @@ const SMTPSettings = () => {
     if (!window.confirm('Remove this SMTP?')) return;
     
     try {
-      const response = await fetch(`http://localhost:3000/api/smtp/${id}`, {
+      const response = await fetch(`/api/smtp/${id}`, {
         method: 'DELETE'
       });
       
@@ -33,7 +33,7 @@ const SMTPSettings = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://80.97.124.100:3000/api/smtp', {
+      const response = await fetch('/api/smtp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ host, port: parseInt(port), user, pass, isActive: true })

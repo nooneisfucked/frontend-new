@@ -8,7 +8,7 @@ const SendOut = () => {
   useEffect(() => {
     const checkStatus = async () => {
       try {
-        const response = await fetch('http://80.97.124.100:3000/api/smtp/send/status');
+        const response = await fetch('/api/smtp/send/status');
         const data = await response.json();
         setIsSending(data.isSending);
       } catch (error) {
@@ -31,7 +31,7 @@ const SendOut = () => {
     const newState = !isSending;
     
     try {
-      const endpoint = newState ? 'http://80.97.124.100:3000/api/smtp/send/start' : 'http://80.97.124.100:3000/api/smtp/send/stop';
+      const endpoint = newState ? '/api/smtp/send/start' : '/api/smtp/send/stop';
       
       const response = await fetch(endpoint, {
         method: 'POST',

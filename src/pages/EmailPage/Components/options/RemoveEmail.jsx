@@ -4,7 +4,7 @@ const RemoveEmail = ({ id, onRemove }) => {
   const handleRemove = async () => {
     if (!window.confirm('Remove this email?')) return;
     
-    await fetch('http://80.97.124.100:3000/api/targets', {
+    await fetch('/api/targets', {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id }),

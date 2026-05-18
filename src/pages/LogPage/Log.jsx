@@ -13,7 +13,7 @@ const Logs = () => {
 
   const fetchLogs = async () => {
     try {
-      const response = await fetch('http://80.97.124.100:3000/api/logs');
+      const response = await fetch('/api/logs');
       const data = await response.json();
       setLogs(data);
     } catch (error) {

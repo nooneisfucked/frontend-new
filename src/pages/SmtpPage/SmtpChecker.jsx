@@ -11,7 +11,7 @@ function SmtpChecker() {
   const handleCheck = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://80.97.124.100:3000/api/smtp/check', {
+      const response = await fetch('/api/smtp/check', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(smtp)

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
 
 const Letters = () => {
-const { data: letters, loading, refetch } = useFetch('http://80.97.124.100:3000/api/letters');
+const { data: letters, loading, refetch } = useFetch('/api/letters');
   const [name, setName] = useState('');
   const [subject, setSubject] = useState('');
   const [htmlFile, setHtmlFile] = useState(null);
@@ -23,7 +23,7 @@ const { data: letters, loading, refetch } = useFetch('http://80.97.124.100:3000/
     formData.append('htmlFile', htmlFile);
 
     try {
-      const response = await fetch('http://80.97.124.100:3000/api/letters', {
+      const response = await fetch('/api/letters', {
         method: 'POST',
         body: formData
       });
