@@ -33,7 +33,7 @@ const AddMail = () => {
 
   const handleRemoveLeads = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/targets/delete', {
+    const response = await fetch('http://80.97.124.100:3000/api/targets/delete', {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' }
     });
@@ -48,7 +48,7 @@ const AddMail = () => {
 };
   const handleSortLeads = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/targets/sort', {
+      const response = await fetch('http://80.97.124.100:3000/api/targets/sort', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });
