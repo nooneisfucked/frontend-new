@@ -1,3 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
 [[redirects]]
   from = "/api/*"
   to = "http://80.97.124.100:3000/api/:splat"
@@ -7,4 +11,4 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200git add .
+  status = 200
